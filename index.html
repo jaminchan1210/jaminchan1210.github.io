@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>米奇妙妙屋</title>
+    <style>
+        /* 基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+        h1, h2, h3 {
+            margin-bottom: 16px;
+        }
+        .photo-details h3 {
+            margin-bottom: 4px;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        .photo-details p {
+            margin-bottom: 4px;
+        }
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 导航栏样式 */
+        .navbar {
+            background-color: #666666;
+            padding: 16px 0;
+            margin-bottom: 20px;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+        .nav-links a {
+            font-size: 18px;
+            color: white;
+        }
+        .nav-links a:hover {
+            color: #cccccc;
+        }
+
+        /* 首页样式 */
+        .home {
+            display: block;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 20px;
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .contact-info {
+            list-style: none;
+        }
+        .contact-info li {
+            margin-bottom: 8px;
+        }
+
+        /* 照片页面样式 */
+        .photos {
+            display: none;
+        }
+        .photo-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        .photo-item {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .photo-img-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .photo-img-container::before {
+            content: '';
+            display: block;
+            padding-top: 75%; /* 4:3 比例 (3/4 = 0.75) */
+        }
+        .photo-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .photo-details {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            text-align: center;
+        }
+        .photo-meta {
+            display: flex;
+            gap: 20px;
+            color: #666;
+            justify-content: center;
+        }
+
+        /* 页脚样式 */
+        .footer {
+            background-color: #f8f8f8;
+            padding: 16px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* 响应式样式 */
+        @media (max-width: 768px) {
+            .profile {
+                flex-direction: column;
+                text-align: center;
+            }
+            .photo-meta {
+                flex-direction: column;
+                gap: 4px;
+            }
+            .photo-img {
+                max-width: 100%;
+                max-height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <div class="navbar">
+        <div class="nav-container">
+            <div class="logo">我的博客</div>
+            <div class="nav-links">
+                <a href="#" onclick="showPage('home')">首页</a>
+                <a href="#" onclick="showPage('photos')">照片</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 内容容器 -->
+    <div class="container">
+        <!-- 首页内容 -->
+        <div id="home" class="home">
+            <!-- 个人介绍 -->
+            <div class="section">
+                <h2>个人介绍</h2>
+                <div class="profile">
+                    <img src="img/pp.jpeg" alt="个人头像" class="profile-img">
+                    <div class="profile-text">
+                        <h3>Andy Tao</h3>
+                        <p>Hi there! my name is Andy Tao, born in 2006, currently study in Shenzhen.</p>
+                        <p>A Photography Enthusiast. </p>
+						<p><a href="#" onclick="showPage('photos')" style="font-style: italic; color: blue; text-decoration: underline;">Click here</a> to check my photo.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 学习经历 -->
+            <div class="section">
+                <h2>学习经历</h2>
+                <div class="education">
+                    <h3>广东新安职业技术学院 2025年9月 - 至今</h3>
+                    <p>信息工程学院-计算机应用技术专业</p>
+                    <h3>深圳外国语学校致远高中 2022年9月 - 2025年6月</h3>
+                    <p>高中阶段</p>
+                    <h3>深圳市光明区实验学校 2019年9月 - 2022年6月</h3>
+                    <p>初中阶段</p>
+                </div>
+            </div>
+
+            <!-- 联系我 -->
+            <div class="section">
+                <h2>留言</h2>
+                <p><a href="#" style="font-style: italic; text-decoration: underline; color: blue;">点击此处前往留言面板</a></p>
+				<p style="color: gray; font-size: 14px">还点不了……</p>
+            </div>
+        </div>
+
+        <!-- 照片页面内容 -->
+		<div id="photos" class="photos">
+            <div class="photo-gallery">
+               
+			   <!-- 照片 -->
+			   <div class="photo-item">
+			       <div class="photo-img-container">
+			           <img src="img/huangmugang.jpeg" alt="黄木岗站" class="photo-img">
+			       </div>
+			       <div class="photo-details">
+			           <h3>黄木岗站</h3>
+			           <div class="photo-meta">
+			               <span>拍摄日期：2025-10-25</span>
+			               <span>拍摄地点：深圳</span>
+			           </div>
+			           <p>黄木岗地铁站，宽阔的站厅。</p>
+			       </div>
+			   </div>
+			   
+				<!-- 照片 -->
+                <div class="photo-item">
+                    <div class="photo-img-container">
+                        <img src="img/b328q.jpeg" alt="凤凰之翼" class="photo-img">
+                    </div>
+                    <div class="photo-details">
+                        <h3>凤凰之翼</h3>
+                        <div class="photo-meta">
+                            <span>拍摄日期：2025-07-19</span>
+                            <span>拍摄地点：深圳</span>
+                        </div>
+                        <p>该位置为国航A359的49L座位，位于紧急出口处，空间比一般座位更加宽敞</p>
+                    </div>
+                </div>
+
+                <!-- 照片 -->
+                <div class="photo-item">
+                    <div class="photo-img-container">
+                        <img src="img/wuhan.jpeg" alt="武汉记忆" class="photo-img">
+                    </div>
+                    <div class="photo-details">
+                        <h3>武汉记忆</h3>
+                        <div class="photo-meta">
+                            <span>拍摄日期：2025-02-03</span>
+                            <span>拍摄地点：武汉</span>
+                        </div>
+                        <p>长曝光下武汉关码头熙熙攘攘的人群</p>
+                    </div>
+                </div>
+
+                <!-- 照片 -->
+                <div class="photo-item">
+                    <div class="photo-img-container">
+                        <img src="img/statferry.jpeg" alt="维港海景" class="photo-img">
+                    </div>
+                    <div class="photo-details">
+                        <h3>维港海景</h3>
+                        <div class="photo-meta">
+                            <span>拍摄日期：2024-07-30</span>
+                            <span>拍摄地点：香港</span>
+                        </div>
+                        <p>在香港的维多利亚港，停靠着的天星小轮</p>
+                    </div>
+                </div>
+
+                <!-- 照片 -->
+                <div class="photo-item">
+                    <div class="photo-img-container">
+                        <img src="img/gangxianorth.jpeg" alt="深圳之眼" class="photo-img">
+                    </div>
+                    <div class="photo-details">
+                        <h3>深圳之眼</h3>
+                        <div class="photo-meta">
+                            <span>拍摄日期：2022-11-12</span>
+                            <span>拍摄地点：深圳</span>
+                        </div>
+                        <p>2022年开通的新岗厦北站，深圳之眼成为一处网红打卡地</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <div class="footer">
+        <p>&copy;2025 Jamin Chan. ｜ All Right Reserved.</p>
+		<p>所有照片禁止用于商业用途！</p>
+    </div>
+
+    <script>
+        // 页面切换功能
+        function showPage(pageId) {
+            // 隐藏所有页面
+            document.querySelectorAll('.container > div').forEach(page => {
+                page.style.display = 'none';
+            });
+            
+            // 显示选中的页面
+            document.getElementById(pageId).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
