@@ -3,20 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" type="image/png" sizes="16x16" href="img/logo.jpeg">
-    <title>米奇妙妙屋</title>
+	<link rel="icon" type="svg_logo" sizes="16x16" href="img/logo_jaminchan.svg">
+    <title>Jamin Chan</title>
     <style>
         /* 基础样式 */
+		@font-face {
+			font-family: 'MiSans';
+			src: url(fonts/MiSans-Regular.ttf), url(fonts/MiSans-Medium.ttf), url(fonts/MiSans-Light.ttf), url(fonts/MiSans-demibold.ttf);
+		}
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'MiSans'
         }
         body {
             line-height: 1.6;
             color: #333;
-            max-width: 1200px;
+            max-width: 1500px;
             margin: 0 auto;
             padding: 0;
         }
@@ -24,8 +28,8 @@
             text-decoration: none;
             color: #333;
         }
-        h1, h2, h3 {
-            margin-bottom: 16px;
+        h1, h2, h3, h4{
+            margin-bottom: 8px;
         }
         .photo-details h3 {
             margin-bottom: 4px;
@@ -44,7 +48,7 @@
 
         /* 导航栏样式 */
         .navbar {
-            background-color: #666666;
+            background-color: goldenrod;
             padding: 16px 0;
             margin-bottom: 20px;
         }
@@ -174,7 +178,7 @@
     <!-- 导航栏 -->
     <div class="navbar">
         <div class="nav-container">
-            <div class="logo">我的博客</div>
+            <div class="logo">🍊欢迎来到橘猫橙妙妙屋🐈</div>
             <div class="nav-links">
                 <a href="#" onclick="showPage('home')">首页</a>
                 <a href="#" onclick="showPage('photos')">照片</a>
@@ -192,10 +196,10 @@
                 <div class="profile">
                     <img src="img/pp.jpeg" alt="个人头像" class="profile-img">
                     <div class="profile-text">
-                        <h3>Andy Tao</h3>
-                        <p>Hi there! my name is Andy Tao, born in 2006, currently study in Shenzhen.</p>
-                        <p>A Photography Enthusiast. </p>
-						<p><a href="#" onclick="showPage('photos')" style="font-style: italic; color: blue; text-decoration: underline;">Click here</a> to check my photo.</p>
+                        <h3 style="font-size: 36px; font-family: MiSans-Demibold; font-style: italic;">Andy Tao</h3>
+                        <p>可以叫我安迪，这是我的英文名。我出生于2006年，从小在深圳长大。现在正在学习计算机应用技术专业。</p>
+                        <p>爱好摄影，听歌和旅游。喜欢听周杰伦和陶喆的歌，喜欢的城市是香港和上海。</p>
+						<p style="font-size: 28px;">🇨🇳🚹🏫💻📷🎵🎤🍲🍔🥤✈️</p>
                     </div>
                 </div>
             </div>
@@ -204,12 +208,12 @@
             <div class="section">
                 <h2>学习经历</h2>
                 <div class="education">
-                    <h3>广东新安职业技术学院 2025年9月 - 至今</h3>
-                    <p>信息工程学院-计算机应用技术专业</p>
-                    <h3>深圳外国语学校致远高中 2022年9月 - 2025年6月</h3>
-                    <p>高中阶段</p>
-                    <h3>深圳市光明区实验学校 2019年9月 - 2022年6月</h3>
-                    <p>初中阶段</p>
+                    <h3>广东新安职业技术学院信息工程学院-计算机应用技术专业</h3>
+						<p style="color: gray;">2025年9月 - 至今</p>
+                    <h3>深圳外国语学校致远高中-高中阶段</h3>
+						<p style="color: gray;">2022年9月 - 2025年6月</p>
+					<h3>深圳市光明区实验学校-初中阶段</h3>
+						<p style="color: gray;">2019年9月 - 2022年6月</p>
                 </div>
             </div>
 
@@ -217,14 +221,14 @@
             <div class="section">
                 <h2>留言</h2>
                 <p><a href="#" style="font-style: italic; text-decoration: underline; color: blue;">点击此处前往留言面板</a></p>
-				<p style="color: gray; font-size: 14px">还点不了……</p>
+				<p style="color: gray; font-size: 14px">留言板还点不了……</p>
             </div>
         </div>
 
         <!-- 照片页面内容 -->
 		<div id="photos" class="photos">
             <div class="photo-gallery">
-               
+				<p style="text-align: center; color: grey;">所有照片均使用 iPhone 13 拍摄，由相关软件后期加工。</p>
 			   <!-- 照片 -->
 			   <div class="photo-item">
 			       <div class="photo-img-container">
@@ -251,7 +255,7 @@
                             <span>拍摄日期：2025-07-19</span>
                             <span>拍摄地点：深圳</span>
                         </div>
-                        <p>该位置为国航A359的49L座位，位于紧急出口处，空间比一般座位更加宽敞</p>
+                        <p>该位置为国航A359的49L座位，位于紧急出口处，空间比一般座位更加宽敞。</p>
                     </div>
                 </div>
 
@@ -266,7 +270,7 @@
                             <span>拍摄日期：2025-02-03</span>
                             <span>拍摄地点：武汉</span>
                         </div>
-                        <p>长曝光下武汉关码头熙熙攘攘的人群</p>
+                        <p>长曝光下武汉关码头熙熙攘攘的人群。</p>
                     </div>
                 </div>
 
@@ -281,7 +285,7 @@
                             <span>拍摄日期：2024-07-30</span>
                             <span>拍摄地点：香港</span>
                         </div>
-                        <p>在香港的维多利亚港，停靠着的天星小轮</p>
+                        <p>在香港的维多利亚港，停靠着的天星小轮。</p>
                     </div>
                 </div>
 
@@ -296,7 +300,8 @@
                             <span>拍摄日期：2022-11-12</span>
                             <span>拍摄地点：深圳</span>
                         </div>
-                        <p>2022年开通的新岗厦北站，深圳之眼成为一处网红打卡地</p>
+                        <p>2022年开通的新岗厦北站，深圳之眼成为一处网红打卡地。</p>
+						
                     </div>
                 </div>
             </div>
@@ -305,8 +310,9 @@
 
     <!-- 页脚 -->
     <div class="footer">
-        <p>&copy;2025 Jamin Chan. ｜ All Right Reserved.</p>
-		<p>所有照片禁止用于商业用途！</p>
+        <p style="font-family: 'MiSans-Light';">&copy;2025 Jamin Chan｜保留一切权利</p>
+		<p style="font-family: 'MiSans-Light';">所有照片禁止用于商业用途！</p>
+		<p style="color: grey; font-size: 12px; font-style: italic;">"Jamin Chan"和"橘猫橙"是作者在各社交平台的通用网名。为确保隐私安全，本网站没有任何作者的真实姓名。</p>
     </div>
 
     <script>
