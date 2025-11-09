@@ -4,12 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="svg_logo" sizes="16x16" href="img/logo_jaminchan.svg">
+	<link rel="preload" href="fonts/MiSans-Regular.ttf" as="font" type="font/truetype" crossorigin>
     <title>Jamin Chan</title>
     <style>
         /* 基础样式 */
 		@font-face {
-			font-family: 'MiSans'
-			src: url(fonts/MiSans-Regular.ttf) format('truetype'), url(fonts/MiSans-Medium.ttf) format('truetype'), url(fonts/MiSans-Light.ttf) format('truetype'), url(fonts/MiSans-demibold.ttf) format('truetype');
+			font-family: 'MiSans';
+			src: url(fonts/MiSans-Regular.ttf) format('truetype');
+			font-weight: 400;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'MiSans';
+			src: url(fonts/MiSans-Medium.ttf) format('truetype');
+			font-weight: 500;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'MiSans';
+			src: url(fonts/MiSans-Light.ttf) format('truetype');
+			font-weight: 300;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'MiSans';
+			src: url(fonts/MiSans-Demibold.ttf) format('truetype');
+			font-weight: 600;
+			font-style: normal;
 		}
         * {
             margin: 0;
@@ -196,7 +217,7 @@
                 <div class="profile">
                     <img src="img/pp.jpeg" alt="个人头像" class="profile-img">
                     <div class="profile-text">
-                        <h3 style="font-size: 36px; font-family: MiSans-Demibold; font-style: italic;">Andy Tao</h3>
+                        <h3 style="font-size: 36px; font-style: italic; font-weight: 600;">Andy Tao</h3>
                         <p>可以叫我安迪，这是我的英文名。我出生于2006年，从小在深圳长大。现在正在学习计算机应用技术专业。</p>
                         <p>爱好摄影，听歌和旅游。喜欢听周杰伦和陶喆的歌，喜欢的城市是香港和上海。</p>
 						<p style="font-size: 28px;">🇨🇳🚹🏫💻📷🎵✈️🎤🍲🍔🥤️</p>
