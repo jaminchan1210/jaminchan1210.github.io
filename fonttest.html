@@ -4,42 +4,49 @@
 		<meta charset="utf-8">
 		<title>Jamin Chan</title>
 		<link rel="icon" type="svg_logo" sizes="16x16" href="img/logo_jaminchan.svg">
+		<link rel="preload" href="fonts/MiSans-Regular.ttf" as="font" type="font/truetype" crossorigin>
 		<style type="text/css">
 			@font-face {
 				font-family: 'MiSans';
-				src: url(fonts/MiSans-Regular.ttf) format('truetype'), url(fonts/MiSans-Medium.ttf) format('truetype'), url(fonts/MiSans-Light.ttf) format('truetype'), url(fonts/MiSans-demibold.ttf) format('truetype');
+				src: url(fonts/MiSans-Regular.ttf) format('truetype');
+				font-weight: 400;
+				font-style: normal;
 			}
-			* {
+			@font-face {
+				font-family: 'MiSans';
+				src: url(fonts/MiSans-Medium.ttf) format('truetype');
+				font-weight: 500;
+				font-style: normal;
+			}
+			@font-face {
+				font-family: 'MiSans';
+				src: url(fonts/MiSans-Light.ttf) format('truetype');
+				font-weight: 300;
+				font-style: normal;
+			}
+			@font-face {
+				font-family: 'MiSans';
+				src: url(fonts/MiSans-Demibold.ttf) format('truetype');
+				font-weight: 600;
+				font-style: normal;
+			}
+			h1, h2, h3, h4 {
 				text-align: center;
 				font-size: 30px;
+				font-family: 'MiSans';
 			}
-			.regular {
-				font-family: 'MiSans-Regular';
-			}
-			.light {
-				font-family: 'MiSans-Light';
-			}
-			.demibold {
-				font-family: 'MiSans-Demibold';
-			}
-			.medium {
-				font-family: 'MiSans-Medium';
+			p {
+				text-align: center;
+				color: blue;
+				font-size: 20px;
 			}
 		</style>
 	</head>
 	<body>
-		<div class="demibold">
-			<h1>字体测试，此处使用Demibold字重</h1>
-		</div>
-		<div class="medium">
-			<h2>字体测试，此处使用Medium字重</h2>
-		</div>
-		<div class="regular">
-			<p>字体测试，此处使用Regular字重</p>
-		</div>
-		<div class="light">
-			<p>字体测试，此处使用Light字重</p>
-		</div>
+		<h1 style="font-weight: 600;">字体测试，此处使用Demibold字重</h1>
+		<h2 style="font-weight: 500;">字体测试，此处使用Medium字重</h2>
+		<h3 style="font-weight: 400;">字体测试，此处使用Regular字重</h3>
+		<h4 style="font-weight: 300;">字体测试，此处使用Light字重</h4>
 		<br/>
 		<br/>
 		<br/>
@@ -48,6 +55,6 @@
 		<br/>
 		<br/>
 		<br/>
-		<p style="color: blue; font-style: italic; font-size: 16px"><a href="index.html">这里都被你发现了，点这段文字回到首页</a></p>
+		<p><a href="index.html">这里都被你发现了，点这段文字回到首页</a></p>
 	</body>
 </html>
