@@ -61,7 +61,7 @@
         }
         .logo {
             font-size: 24px;
-            font-weight: bold;
+            font-weight: normal;
             color: white;
         }
         .nav-links {
@@ -110,7 +110,7 @@
         .photo-gallery {
             display: flex;
             flex-direction: column;
-            gap: 40px;
+            gap: 20px;
         }
         .photo-item {
             display: flex;
@@ -178,10 +178,10 @@
     <!-- 导航栏 -->
     <div class="navbar">
         <div class="nav-container">
-            <div class="logo">🍊欢迎来到橘猫橙妙妙屋🐈</div>
+            <div class="logo">🍊橘猫橙妙妙屋🐈</div>
             <div class="nav-links">
                 <a href="#" onclick="showPage('home')">首页</a>
-                <a href="#" onclick="showPage('photos')">照片</a>
+                <a href="#" onclick="showPage('photos')">「2024年」年度照片</a>
             </div>
         </div>
     </div>
@@ -199,10 +199,15 @@
                         <h3 style="font-size: 36px; font-family: MiSans-Demibold; font-style: italic;">Andy Tao</h3>
                         <p>可以叫我安迪，这是我的英文名。我出生于2006年，从小在深圳长大。现在正在学习计算机应用技术专业。</p>
                         <p>爱好摄影，听歌和旅游。喜欢听周杰伦和陶喆的歌，喜欢的城市是香港和上海。</p>
-						<p style="font-size: 28px;">🇨🇳🚹🏫💻📷🎵🎤🍲🍔🥤✈️</p>
+						<p style="font-size: 28px;">🇨🇳🚹🏫💻📷🎵✈️🎤🍲🍔🥤️</p>
                     </div>
                 </div>
             </div>
+			<!-- 头版部分 -->
+			<div class="section">
+				<p style="font-style: italic; text-align: center; font-size: 30px; text-decoration: underline;"><a href="#" onclick="showPage('photos')">📷点击此处查看「2024年」年度照片📷</a></p>
+				<p style="text-align: center; font-size: 24px; ">「2025年」年度照片预计在2026年1月20日左右发布，敬请期待…</p>
+			</div>
 
             <!-- 学习经历 -->
             <div class="section">
@@ -228,56 +233,61 @@
         <!-- 照片页面内容 -->
 		<div id="photos" class="photos">
             <div class="photo-gallery">
-				<p style="text-align: center; color: grey;">所有照片均使用 iPhone 13 拍摄，由相关软件后期加工。</p>
-			   <!-- 照片 -->
+				<div class="section">
+					<h2 style="text-align: center; font-size: 48px; font-style: italic; margin-bottom: 1px;">📷「2024年」年度照片 📷</h2>
+					<p style="text-align: center; color: grey;">除特殊说明外，所有照片均使用 iPhone 13 拍摄，由相关软件后期加工。</p>
+				</div>
+				
+			   <!-- 照片1 -->
 			   <div class="photo-item">
 			       <div class="photo-img-container">
-			           <img src="img/huangmugang.jpeg" alt="黄木岗站" class="photo-img">
+			           <img src="img/qianhai_1208.webp" alt="欢乐港湾" class="photo-img">
 			       </div>
 			       <div class="photo-details">
-			           <h3>黄木岗站</h3>
+			           <h3>欢乐港湾</h3>
 			           <div class="photo-meta">
-			               <span>拍摄日期：2025-10-25</span>
+			               <span>拍摄日期：2024-12-08</span>
 			               <span>拍摄地点：深圳</span>
 			           </div>
-			           <p>黄木岗地铁站，宽阔的站厅。</p>
+			           <p>站在远处眺望欢乐港湾摩天轮。</p>
+					   <p style="color: grey; text-align: center; font-style: italic; font-family: 'MiSans-Light'; font-size: 14px;">*该张照片使用 iPhone 7 Plus 拍摄</p>
 			       </div>
 			   </div>
 			   
-				<!-- 照片 -->
+				<!-- 照片2 -->
                 <div class="photo-item">
                     <div class="photo-img-container">
-                        <img src="img/b328q.jpeg" alt="凤凰之翼" class="photo-img">
+                        <img src="img/dameisha_0825.webp" alt="小城夏天" class="photo-img">
                     </div>
                     <div class="photo-details">
-                        <h3>凤凰之翼</h3>
+                        <h3>小城夏天</h3>
                         <div class="photo-meta">
-                            <span>拍摄日期：2025-07-19</span>
+                            <span>拍摄日期：2024-08-25</span>
                             <span>拍摄地点：深圳</span>
                         </div>
-                        <p>该位置为国航A359的49L座位，位于紧急出口处，空间比一般座位更加宽敞。</p>
+                        <p>大梅沙的沙滩和海浪就是夏天最直观的展现。</p>
                     </div>
                 </div>
 
-                <!-- 照片 -->
+                <!-- 照片3 -->
                 <div class="photo-item">
                     <div class="photo-img-container">
-                        <img src="img/wuhan.jpeg" alt="武汉记忆" class="photo-img">
+                        <img src="img/starferry_0730.webp" alt="天星小轮" class="photo-img">
                     </div>
                     <div class="photo-details">
-                        <h3>武汉记忆</h3>
+                        <h3>天星小轮</h3>
                         <div class="photo-meta">
-                            <span>拍摄日期：2025-02-03</span>
-                            <span>拍摄地点：武汉</span>
+                            <span>拍摄日期：2024-07-30</span>
+                            <span>拍摄地点：香港</span>
                         </div>
-                        <p>长曝光下武汉关码头熙熙攘攘的人群。</p>
+                        <p>大雨笼罩维港，在海面上行驶的天星小轮。</p>
                     </div>
                 </div>
 
-                <!-- 照片 -->
+                <!-- 照片4 -->
                 <div class="photo-item">
                     <div class="photo-img-container">
-                        <img src="img/statferry.jpeg" alt="维港海景" class="photo-img">
+                        <img src="img/vichar_0730.webp" alt="维港海景" class="photo-img">
                     </div>
                     <div class="photo-details">
                         <h3>维港海景</h3>
@@ -285,25 +295,103 @@
                             <span>拍摄日期：2024-07-30</span>
                             <span>拍摄地点：香港</span>
                         </div>
-                        <p>在香港的维多利亚港，停靠着的天星小轮。</p>
+                        <p>在香港的维多利亚港，停靠在岸边的天星小轮，一场大雨即将来袭。</p>
                     </div>
                 </div>
 
-                <!-- 照片 -->
+                <!-- 照片5 -->
                 <div class="photo-item">
                     <div class="photo-img-container">
-                        <img src="img/gangxianorth.jpeg" alt="深圳之眼" class="photo-img">
+                        <img src="img/hyfireworks_0528.webp" alt="夏日烟火" class="photo-img">
                     </div>
                     <div class="photo-details">
-                        <h3>深圳之眼</h3>
+                        <h3>夏日烟火</h3>
                         <div class="photo-meta">
-                            <span>拍摄日期：2022-11-12</span>
-                            <span>拍摄地点：深圳</span>
+                            <span>拍摄日期：2024-05-28</span>
+                            <span>拍摄地点：河源</span>
                         </div>
-                        <p>2022年开通的新岗厦北站，深圳之眼成为一处网红打卡地。</p>
+                        <p>我认为这张是整个高中生活中最具有代表性的照片之一。</p>
+					</div>
+				</div>
 						
+				<!-- 照片6 -->
+				<div class="photo-item">
+					<div class="photo-img-container">
+						<img src="img/heyuan_0527.webp" alt="河源乡村" class="photo-img">
+					</div>
+					<div class="photo-details">
+						<h3>河源乡村</h3>
+						     <div class="photo-meta">
+						        <span>拍摄日期：2024-05-27</span>
+						        <span>拍摄地点：河源</span>
+						</div>
+						<p>在宁静的乡村里采风。</p>
+					</div>
+				</div>
+						
+				<!-- 照片7 -->
+				<div class="photo-item">
+					<div class="photo-img-container">
+						<img src="img/ealuni_0525.webp" alt="进站转弯" class="photo-img">
+					</div>
+					<div class="photo-details">
+						<h3>进站转弯</h3>
+						     <div class="photo-meta">
+						        <span>拍摄日期：2024-05-25</span>
+						        <span>拍摄地点：香港</span>
+						</div>
+						<p>那时的港铁东铁线大学站还未安装站台门，现在已全线安装。</p>
+					</div>
+				</div>
+						
+				<!-- 照片8 -->
+				<div class="photo-item">
+					<div class="photo-img-container">
+						<img src="img/hsbchkhq_0504.webp" alt="汇丰总行" class="photo-img">
+					</div>
+					<div class="photo-details">
+						<h3>汇丰总行</h3>
+						     <div class="photo-meta">
+						        <span>拍摄日期：2024-05-04</span>
+						        <span>拍摄地点：香港</span>
+						</div>
+						<p>位于香港中环的汇丰银行总行，路过的人群和行驶的电车。</p>
+					</div>
+				</div>
+						
+					<!-- 照片9 -->
+					<div class="photo-item">
+						<div class="photo-img-container">
+							<img src="img/countryside_0210.webp" alt="乡间风景" class="photo-img">
+						</div>
+						<div class="photo-details">
+							<h3>乡间风景</h3>
+							     <div class="photo-meta">
+							        <span>拍摄日期：2024-11-12</span>
+							        <span>拍摄地点：孝感</span>
+							</div>
+							<p>乡下的风景就是那么纯粹。</p>
+						</div>
+					</div>
+							
+					<!-- 照片10 -->
+					<div class="photo-item">
+						<div class="photo-img-container">
+							<img src="img/icedtree_0205.webp" alt="寒冬来临" class="photo-img">
+						</div>
+						<div class="photo-details">
+							<h3>寒冬来临</h3>
+							     <div class="photo-meta">
+							        <span>拍摄日期：2024-02-05</span>
+							        <span>拍摄地点：咸宁</span>
+							</div>
+							<p>随手拍下的一棵结了冰的树，那年冬天是真的冷。</p>
+						</div>
                     </div>
                 </div>
+					<div class="section">
+					<p style="margin-top: 40px; text-align: center; color: grey; font-style: italic; font-size: 14px;">所有照片均被压缩为WebP格式</p>
+				</div>
             </div>
         </div>
     </div>
