@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="svg_logo" sizes="16x16" href="img/logo_jaminchan.svg">
 	<link rel="preload" href="fonts/MiSans-Regular.ttf" as="font" type="font/truetype" crossorigin>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Jamin Chan</title>
-	
     <style>
         /* 基础样式 */
 		@font-face {
@@ -172,22 +172,26 @@
             text-align: center;
             margin-top: 40px;
         }
-
-        /* 响应式样式 */
-        @media (max-width: 768px) {
-            .profile {
-                flex-direction: column;
-                text-align: center;
-            }
-            .photo-meta {
-                flex-direction: column;
-                gap: 4px;
-            }
-            .photo-img {
-                max-width: 100%;
-                max-height: 300px;
-            }
-        }
+		
+		/* GitHub logo */
+		.github-icon {
+		      color: #333; /* GitHub默认深色 */
+		      font-size: 36px; /* 图标大小 */
+		      transition: transform 0.3s ease;
+		    }
+		    
+		.github-icon:hover {
+		  transform: scale(1.1) rotate(10deg); /* 悬停效果 */
+		  color: #6e5494; /* hover时变色 */
+		}
+		
+		/* 响应式样式（首页适用） */
+		@media (max-width: 768px) {
+		    .profile {
+		        flex-direction: column;
+		        text-align: center;
+		    }
+		}
     </style>
 </head>
 <body>
@@ -196,8 +200,9 @@
         <div class="nav-container">
             <div class="logo">🍊橘猫橙妙妙屋🐈</div>
             <div class="nav-links">
-                <a href="#" onclick="showPage('home')">首页</a>
-                <a href="#" onclick="showPage('photos')">「2024年」年度照片</a>
+		        <a href="index.html">首页</a>
+		        <a href="photo.html">年度照片</a>
+				<a href="music.html">音乐分享</a>
             </div>
         </div>
     </div>
@@ -214,7 +219,7 @@
                     <div class="profile-text">
                         <h3 style="font-size: 36px; font-family: 'MiSans-Demibold'; font-style: italic;">Andy Tao</h3>
                         <p>可以叫我安迪，这是我的英文名。我出生于2006年，从小在深圳长大。现在正在学习计算机应用技术专业。</p>
-                        <p>爱好摄影，听歌和旅游。喜欢听周杰伦和陶喆的歌，喜欢的城市是香港和上海。</p>
+                        <p>INFP，爱好摄影，听歌和旅游。喜欢听周杰伦和陶喆的歌，喜欢的城市是香港和上海。</p>
 						<p style="font-size: 28px;">🇨🇳🚹🏫💻📷🎵✈️🎤🍲🍔🥤️</p>
                     </div>
                 </div>
@@ -240,175 +245,15 @@
 
             <!-- 联系我 -->
             <div class="section">
-                <h2>留言</h2>
-                <p><a href="#" style="font-style: italic; text-decoration: underline; color: blue;">点击此处前往留言面板</a></p>
-				<p style="color: gray; font-size: 14px">留言板还点不了……</p>
+                <h2 style="font-weight: 500;">GitHub主页</h2>
+				<a href="https://github.com/jaminchan1210" target="_blank" class="fa-github">
+					<i class="fab fa-github github-icon"></i>
+				</a>
             </div>
-        </div>
-
-        <!-- 照片页面内容 -->
-		<div id="photos" class="photos">
-            <div class="photo-gallery">
-				<div class="section">
-					<h2 style="text-align: center; font-size: 48px; font-style: italic; margin-bottom: 1px;">📷「2024年」年度照片 📷</h2>
-					<p style="text-align: center; color: grey;">除特殊说明外，所有照片均使用 iPhone 13 拍摄，由相关软件后期加工。</p>
-				</div>
-				
-			   <!-- 照片1 -->
-			   <div class="photo-item">
-			       <div class="photo-img-container">
-			           <img src="img/qianhai_1208.webp" alt="欢乐港湾" class="photo-img">
-			       </div>
-			       <div class="photo-details">
-			           <h3>欢乐港湾</h3>
-			           <div class="photo-meta">
-			               <span>拍摄日期：2024-12-08</span>
-			               <span>拍摄地点：深圳</span>
-			           </div>
-			           <p>站在远处眺望欢乐港湾摩天轮。</p>
-					   <p style="color: grey; text-align: center; font-style: italic; font-family: 'MiSans-Light'; font-size: 14px;">*该张照片使用 iPhone 7 Plus 拍摄</p>
-			       </div>
-			   </div>
-			   
-				<!-- 照片2 -->
-                <div class="photo-item">
-                    <div class="photo-img-container">
-                        <img src="img/dameisha_0825.webp" alt="小城夏天" class="photo-img">
-                    </div>
-                    <div class="photo-details">
-                        <h3>小城夏天</h3>
-                        <div class="photo-meta">
-                            <span>拍摄日期：2024-08-25</span>
-                            <span>拍摄地点：深圳</span>
-                        </div>
-                        <p>大梅沙的沙滩和海浪就是夏天最直观的展现。</p>
-                    </div>
-                </div>
-
-                <!-- 照片3 -->
-                <div class="photo-item">
-                    <div class="photo-img-container">
-                        <img src="img/starferry_0730.webp" alt="天星小轮" class="photo-img">
-                    </div>
-                    <div class="photo-details">
-                        <h3>天星小轮</h3>
-                        <div class="photo-meta">
-                            <span>拍摄日期：2024-07-30</span>
-                            <span>拍摄地点：香港</span>
-                        </div>
-                        <p>大雨笼罩维港，在海面上行驶的天星小轮。</p>
-                    </div>
-                </div>
-
-                <!-- 照片4 -->
-                <div class="photo-item">
-                    <div class="photo-img-container">
-                        <img src="img/vichar_0730.webp" alt="维港海景" class="photo-img">
-                    </div>
-                    <div class="photo-details">
-                        <h3>维港海景</h3>
-                        <div class="photo-meta">
-                            <span>拍摄日期：2024-07-30</span>
-                            <span>拍摄地点：香港</span>
-                        </div>
-                        <p>在香港的维多利亚港，停靠在岸边的天星小轮，一场大雨即将来袭。</p>
-                    </div>
-                </div>
-
-                <!-- 照片5 -->
-                <div class="photo-item">
-                    <div class="photo-img-container">
-                        <img src="img/hyfireworks_0528.webp" alt="夏日烟火" class="photo-img">
-                    </div>
-                    <div class="photo-details">
-                        <h3>夏日烟火</h3>
-                        <div class="photo-meta">
-                            <span>拍摄日期：2024-05-28</span>
-                            <span>拍摄地点：河源</span>
-                        </div>
-                        <p>我认为这张是整个高中生活中最具有代表性的照片之一。</p>
-					</div>
-				</div>
-						
-				<!-- 照片6 -->
-				<div class="photo-item">
-					<div class="photo-img-container">
-						<img src="img/heyuan_0527.webp" alt="河源乡村" class="photo-img">
-					</div>
-					<div class="photo-details">
-						<h3>河源乡村</h3>
-						     <div class="photo-meta">
-						        <span>拍摄日期：2024-05-27</span>
-						        <span>拍摄地点：河源</span>
-						</div>
-						<p>在宁静的乡村里采风。</p>
-					</div>
-				</div>
-						
-				<!-- 照片7 -->
-				<div class="photo-item">
-					<div class="photo-img-container">
-						<img src="img/ealuni_0525.webp" alt="进站转弯" class="photo-img">
-					</div>
-					<div class="photo-details">
-						<h3>进站转弯</h3>
-						     <div class="photo-meta">
-						        <span>拍摄日期：2024-05-25</span>
-						        <span>拍摄地点：香港</span>
-						</div>
-						<p>那时的港铁东铁线大学站还未安装站台门，现在已全线安装。</p>
-					</div>
-				</div>
-						
-				<!-- 照片8 -->
-				<div class="photo-item">
-					<div class="photo-img-container">
-						<img src="img/hsbchkhq_0504.webp" alt="汇丰总行" class="photo-img">
-					</div>
-					<div class="photo-details">
-						<h3>汇丰总行</h3>
-						     <div class="photo-meta">
-						        <span>拍摄日期：2024-05-04</span>
-						        <span>拍摄地点：香港</span>
-						</div>
-						<p>位于香港中环的汇丰银行总行，路过的人群和行驶的电车。</p>
-					</div>
-				</div>
-						
-					<!-- 照片9 -->
-					<div class="photo-item">
-						<div class="photo-img-container">
-							<img src="img/countryside_0210.webp" alt="乡间风景" class="photo-img">
-						</div>
-						<div class="photo-details">
-							<h3>乡间风景</h3>
-							     <div class="photo-meta">
-							        <span>拍摄日期：2024-11-12</span>
-							        <span>拍摄地点：孝感</span>
-							</div>
-							<p>乡下的风景就是那么纯粹。</p>
-						</div>
-					</div>
-							
-					<!-- 照片10 -->
-					<div class="photo-item">
-						<div class="photo-img-container">
-							<img src="img/icedtree_0205.webp" alt="寒冬来临" class="photo-img">
-						</div>
-						<div class="photo-details">
-							<h3>寒冬来临</h3>
-							     <div class="photo-meta">
-							        <span>拍摄日期：2024-02-05</span>
-							        <span>拍摄地点：咸宁</span>
-							</div>
-							<p>随手拍下的一棵结了冰的树，那年冬天是真的冷。</p>
-						</div>
-                    </div>
-                </div>
-					<div class="section">
-					<p style="margin-top: 40px; text-align: center; color: grey; font-style: italic; font-size: 14px;">所有照片均被压缩为WebP格式</p>
-				</div>
-            </div>
+			<div style="text-align: center;">
+			<img src="img/640.webp" height="160" width="160" alt="高雅人士">
+			</div>
+			<h3 style="text-align: center;">正在寻找创作灵感……</h3>
         </div>
     </div>
 
@@ -418,18 +263,5 @@
 		<p style="font-family: 'MiSans-Light';">所有照片禁止用于商业用途！</p>
 		<p style="color: grey; font-size: 12px; font-style: italic;">"Jamin Chan"和"橘猫橙"是作者在各社交平台的通用网名。为确保隐私安全，本网站没有任何作者的真实姓名。</p>
     </div>
-
-    <script>
-        // 页面切换功能
-        function showPage(pageId) {
-            // 隐藏所有页面
-            document.querySelectorAll('.container > div').forEach(page => {
-                page.style.display = 'none';
-            });
-            
-            // 显示选中的页面
-            document.getElementById(pageId).style.display = 'block';
-        }
-    </script>
 </body>
 </html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" type="svg_logo" sizes="16x16" href="img/logo_jaminchan.svg">
+		<link rel="preload" href="fonts/MiSans-Regular.ttf" as="font" type="font/truetype" crossorigin>
+		<title>音乐分享 - Jamin Chan</title>
+		<style type="text/css">
+			/* 基础样式（首页共用） */
+			@font-face {
+			    font-family: 'MiSans';
+			    src: url(fonts/MiSans-Regular.woff2) format('woff2');
+			    font-weight: 400;
+			    font-style: normal;
+			}
+			@font-face {
+			    font-family: 'MiSans';
+			    src: url(fonts/MiSans-Medium.woff2) format('woff2');
+			    font-weight: 500;
+			    font-style: normal;
+			}
+			@font-face {
+			    font-family: 'MiSans';
+			    src: url(fonts/MiSans-Light.woff2) format('woff2');
+			    font-weight: 300;
+			    font-style: normal;
+			}
+			* {
+			    margin: 0;
+			    padding: 0;
+			    box-sizing: border-box;
+			    font-family: 'MiSans'
+			}
+			body {
+			    line-height: 1.6;
+			    color: #333;
+			    max-width: 1500px;
+			    margin: 0 auto;
+			    padding: 0;
+			}
+			a {
+			    text-decoration: none;
+			    color: #333;
+			}
+			h1, h2, h3, h4{
+			    margin-bottom: 8px;
+			}
+			p {
+			    margin-bottom: 8px;
+			}
+			.container {
+			    padding: 20px;
+			    max-width: 1200px;
+			    margin: 0 auto;
+			}
+			
+			/* 导航栏样式（首页包含） */
+			.navbar {
+			    background-color: goldenrod;
+			    padding: 16px 0;
+			    margin-bottom: 20px;
+			}
+			.nav-container {
+			    display: flex;
+			    justify-content: space-between;
+			    max-width: 1200px;
+			    margin: 0 auto;
+			    padding: 0 20px;
+			}
+			.logo {
+			    font-size: 24px;
+			    font-weight: normal;
+			    color: white;
+			}
+			.nav-links {
+			    display: flex;
+			    gap: 24px;
+			    align-items: center;
+			}
+			.nav-links a {
+			    font-size: 18px;
+			    color: white;
+			}
+			.nav-links a:hover {
+			    color: #cccccc;
+			}
+			
+			/* 首页专属样式 */
+			.home {
+			    display: block;
+			}
+			.section {
+			    margin-bottom: 40px;
+			}
+			.profile {
+			    display: flex;
+			    align-items: center;
+			    gap: 24px;
+			    margin-bottom: 20px;
+			}
+			.profile-img {
+			    width: 150px;
+			    height: 150px;
+			    border-radius: 50%;
+			    object-fit: cover;
+			}
+			.music {
+				display: flex;
+				justify-content: center;
+				margin: 20px;
+			}
+			
+			/* 页脚样式（首页包含） */
+			.footer {
+			    background-color: #f8f8f8;
+			    padding: 16px 0;
+			    text-align: center;
+			    margin-top: 40px;
+			}
+			
+			/* 响应式样式（首页适用） */
+			@media (max-width: 768px) {
+			    .profile {
+			        flex-direction: column;
+			        text-align: center;
+			    }
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 导航栏 -->
+		<div class="navbar">
+		    <div class="nav-container">
+		        <div class="logo">🍊橘猫橙妙妙屋🐈</div>
+		        <div class="nav-links">
+					<a href="index.html">首页</a>
+					<a href="photo.html">年度照片</a>
+					<a href="music.html">音乐分享</a>
+		        </div>
+		    </div>
+		</div>
+		
+		<div class="container">
+		    <!-- 首页内容 -->
+		    <div id="home" class="home">
+				<!-- 音乐分享 -->
+				<div class="section">
+					<h1 style="font-family: 'MiSans'; font-weight: 400; text-align: center; font-size: 36px; font-style: italic;">
+						🎵本月TOP1音乐🏆</h1> 
+					<p style="font-size: 14px; color: grey; text-align: center;">
+						2025.11</p>
+					<div class="music">
+						<iframe 
+						allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" 
+						frameborder="0" 
+						height="150" 
+						style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" 
+						sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" 
+						src="https://embed.music.apple.com/cn/song/gone-girl/1837585503">
+						</iframe>
+					</div>
+						<p style="font-style: italic; font-size: 14px; color: grey; text-align: center;">
+							原来，"Gone Girl"不是离开的你，而是留在原地，迟迟不肯走的那部分我自己。——网易云音乐评论区</p>
+					<div class="section">
+						<br/>
+						<br/>
+						<br/>
+						<h2 style="text-align: center;"">依旧歌荒中……</h2>
+						<div style="text-align: center;">
+						<img src="img/640.webp" height="160" width="160" alt="高雅人士">
+						</div>
+						<p style="text-align: center;"">骗你的，其实是懒得写了……</p>
+					</div>
+				</div>
+		    </div>
+		</div>
+					
+		<!-- 页脚 -->
+		<div class="footer">
+		    <p style="font-family: 'MiSans-Light';">&copy;2025 Jamin Chan｜保留一切权利</p>
+			<p style="font-family: 'MiSans-Light';">所有照片禁止用于商业用途！</p>
+			<p style="color: grey; font-size: 12px; font-style: italic;">"Jamin Chan"和"橘猫橙"是作者在各社交平台的通用网名。为确保隐私安全，本网站没有任何作者的真实姓名。</p>
+		</div>
+		
+	</body>
+</html>
