@@ -179,18 +179,14 @@
 		      font-size: 36px; /* 图标大小 */
 		      transition: transform 0.3s ease;
 		    }
-		    
 		.github-icon:hover {
 		  transform: scale(1.1) rotate(10deg); /* 悬停效果 */
 		  color: #6e5494; /* hover时变色 */
 		}
 		
-		/* 响应式样式（首页适用） */
-		@media (max-width: 768px) {
-		    .profile {
-		        flex-direction: column;
-		        text-align: center;
-		    }
+		/* 首行缩进 */
+		.indent {
+			text-indent: 1em;
 		}
     </style>
 </head>
@@ -226,14 +222,14 @@
             </div>
 			<!-- 头版部分 -->
 			<div class="section">
-				<p style="font-style: italic; text-align: center; font-size: 30px; text-decoration: underline;"><a href="#" onclick="showPage('photos')">📷点击此处查看「2024年」年度照片📷</a></p>
+				<p style="font-style: italic; text-align: center; font-size: 30px; text-decoration: underline;"><a href="photo.html">📷点击此处查看「2024年」年度照片📷</a></p>
 				<p style="text-align: center; font-size: 24px; ">「2025年」年度照片预计在2026年1月20日左右发布，敬请期待…</p>
 			</div>
 
             <!-- 学习经历 -->
             <div class="section">
                 <h2 style="font-weight: 500;">学习经历</h2>
-                <div class="education">
+                <div class="indent">
                     <h3 style="font-weight: 500;">广东新安职业技术学院信息工程学院-计算机应用技术专业</h3>
 						<p style="color: gray;">2025年9月 - 至今</p>
                     <h3 style="font-weight: 500;">深圳外国语学校致远高中-高中阶段</h3>
@@ -242,8 +238,33 @@
 						<p style="color: gray;">2019年9月 - 2022年6月</p>
                 </div>
             </div>
-
-            <!-- 联系我 -->
+			
+			<!-- 早期项目 -->
+			<div class="section">
+				<h2 style="font-weight: 500;">早期项目</h2>
+					<p class="indent">早期的我尝试过使用Google Sites和Hexo框架来建网站。</p>
+					<h3 style="text-align: center; font-style: italic; text-decoration: underline;"><a href="https://hexo.io/zh-cn/">点击此处了解Hexo框架</a></h3>
+					<p style="color: gray; font-weight: 300; font-size: 16px; text-align: center;">早期使用Hexo框架制作的网站源文件已丢失……</p>
+					<h3 style="text-align: center; font-style: italic; text-decoration: underline;"><a href="https://sites.google.com/view/jaminchan-en/main">点击此处前往我早期制作的Google Sites网站</a></h3>
+					<p style="color: gray; font-weight: 300; font-size: 16px; text-align: center;">要访问Google Sites，你需要使用VPN。使用时请遵守你所在地区的相关法律。</p>
+			</div>
+			
+			<!-- 关于 -->
+			<div class="section">
+				<h2 style="font-weight: 500;">Q&A</h2>
+				<div class="indent">
+					<h3>Q1: 为什么网名叫Jamin Chan?</h3>
+						<p>这个名字是好久以前头脑一热想出来的，一直沿用至今，并没有什么特殊意义。</p>
+					<h3>Q2: 为什么网名叫橘猫橙?</h3>
+						<p>橘猫橙这个名字就是最近想出来的，使用了Jamin Chan中的J, M, C三个作为首字母。</p>
+					<h3>Q3: 这个网站是怎么做的?</h3>
+						<p>首先用豆包生成了一个CSS样式，然后在此基础上，用HBuilderX进行编辑，编辑后上传GitHub。在下面你可以找到我的GitHub主页链接。</p>
+					<h3>Q4: Andy Tao也是网名吗?</h3>
+						<p>这个就不是网名了，是我从初中开始使用的英文名。Tao是我的姓，和David Tao，陶喆的陶一样。（难怪喜欢听陶喆的歌）</p>
+				</div>
+			</div>
+			
+			<!-- 联系我 -->
             <div class="section">
                 <h2 style="font-weight: 500;">GitHub主页</h2>
 				<a href="https://github.com/jaminchan1210" target="_blank" class="fa-github">
@@ -251,7 +272,7 @@
 				</a>
             </div>
 			<div style="text-align: center;">
-			<img src="img/640.webp" height="160" width="160" alt="高雅人士">
+			<a href="fonttest.html"><img src="img/640.webp" height="160" width="160" alt="高雅人士"></a>
 			</div>
 			<h3 style="text-align: center;">正在寻找创作灵感……</h3>
         </div>
@@ -261,6 +282,7 @@
     <div class="footer">
         <p style="font-family: 'MiSans-Light';">&copy;2025 Jamin Chan｜保留一切权利</p>
 		<p style="font-family: 'MiSans-Light';">所有照片禁止用于商业用途！</p>
+		<p style="color: grey; font-size: 12px; font-style: italic;">本网站均使用了小米科技有限责任公司的"MiSans"字体</p>
 		<p style="color: grey; font-size: 12px; font-style: italic;">"Jamin Chan"和"橘猫橙"是作者在各社交平台的通用网名。为确保隐私安全，本网站没有任何作者的真实姓名。</p>
     </div>
 </body>
