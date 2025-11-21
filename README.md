@@ -14,7 +14,7 @@
 
 「2025年」年度照片的筛选将在*2026年1月19日*前结束，预计发布时间*2026年1月20日*。
 
-<img src="https://jaminchan1210.github.io/img/640.webp" height="160" width="160" alt="高雅人士">
+<img src="img/640.webp" height="160" width="160" alt="高雅人士">
 <h3 style="text-align:center">寻找创作灵感中</h3>
 
 &copy;2025 Jamin Chan. All Right Reserved.
