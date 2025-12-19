@@ -105,36 +105,19 @@
     <p class="page-subtitle">想看什么在下面自己点</p>
 	<div class="preview-section">全新首页风格！其余页面还在制作中……</div>
     <div class="nav-container">
-        <div class="nav-card" id="homework-card">
+        <a href="https://jaminchan1210.github.io/html5finalwork/" class="nav-card">
             <div class="card-icon">📚</div>
             <div class="card-text">期末大作业展示</div>
-        </div>
-        <div href="#" class="nav-card" id="photo-card">
+        </a>
+        <a href="#" class="nav-card">
             <div class="card-icon">📸</div>
             <div class="card-text">年度照片</div>
-        </div>
-        <div href="#" class="nav-card" id="music-card">
+        </a>
+        <a href="#" class="nav-card">
             <div class="card-icon">🎵</div>
             <div class="card-text">年度音乐</div>
-        </div>
+        </a>
     </div>
     <div class="footer">&copy;2025 橘猫橙｜保留一切权利</div>
-    <script>
-        const homeworkCard = document.getElementById('homework-card');
-        homeworkCard.addEventListener('click', function() {
-            const isConfirm = confirm('该板块未适配移动端浏览器，建议使用电脑端浏览器查看，你要继续吗？');
-            if (isConfirm) {
-                window.location.href = "https://jaminchan1210.github.io/html5finalwork/;
-            }
-        });
-		const photoCard = document.getElementById('photo-card');
-		    photoCard.addEventListener('click', function() {
-		        alert('该板块尚在更新中，敬请期待！');
-		});
-		const musicCard = document.getElementById('music-card');
-		musicCard.addEventListener('click', function() {
-		    alert('该板块尚在更新中，敬请期待！');
-		});
-    </script>
 </body>
 </html>
