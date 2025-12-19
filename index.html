@@ -3,28 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" type="svg_logo" sizes="16x16" href="img/logo_jaminchan.svg">
-	<link rel="preload" href="fonts/MiSans-Regular.ttf" as="font" type="font/truetype" crossorigin>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link rel="icon" sizes="24x24" href="img/logo.png">
     <title>Jamin Chan</title>
     <style>
-        /* 基础样式 */
 		@font-face {
 			font-family: 'MiSans';
 			src: url(fonts/MiSans-Regular.woff2) format('woff2');
 			font-weight: 400;
-			font-style: normal;
-		}
-		@font-face {
-			font-family: 'MiSans';
-			src: url(fonts/MiSans-Medium.woff2) format('woff2');
-			font-weight: 500;
-			font-style: normal;
-		}
-		@font-face {
-			font-family: 'MiSans';
-			src: url(fonts/MiSans-Light.woff2) format('woff2');
-			font-weight: 300;
 			font-style: normal;
 		}
         * {
@@ -34,256 +19,122 @@
             font-family: 'MiSans'
         }
         body {
-            line-height: 1.6;
-            color: #333;
-            max-width: 1500px;
-            margin: 0 auto;
-            padding: 0;
-        }
-        a {
-            text-decoration: none;
-            color: #333;
-        }
-        h1, h2, h3, h4{
-            margin-bottom: 8px;
-        }
-        .photo-details h3 {
-            margin-bottom: 4px;
-        }
-        p {
-            margin-bottom: 12px;
-        }
-        .photo-details p {
-            margin-bottom: 4px;
-        }
-        .container {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #e0f7fa 0%, #f3e5f5 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
         }
-
-        /* 导航栏样式 */
-        .navbar {
-            background-color: goldenrod;
-            padding: 16px 0;
-            margin-bottom: 20px;
+        .page-title {
+            font-size: 2.5rem;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            text-align: center;
         }
+        .page-subtitle {
+            font-size: 1rem;
+            color: #718096;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+		.preview-section {
+		    padding: 1rem 2rem;
+		    margin-bottom: 2rem;
+		    font-size: 1rem;
+		    color: #6b46c1;
+		    text-align: center;
+		}
         .nav-container {
             display: flex;
-            justify-content: space-between;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .logo {
-            font-size: 24px;
-            font-weight: normal;
-            color: white;
-        }
-        .nav-links {
-            display: flex;
-            gap: 24px;
-            align-items: center;
-        }
-        .nav-links a {
-            font-size: 18px;
-            color: white;
-        }
-        .nav-links a:hover {
-            color: #cccccc;
-        }
-
-        /* 首页样式 */
-        .home {
-            display: block;
-        }
-        .section {
-            margin-bottom: 40px;
-        }
-        .profile {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-            margin-bottom: 20px;
-        }
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        .contact-info {
-            list-style: none;
-        }
-        .contact-info li {
-            margin-bottom: 8px;
-        }
-
-        /* 照片页面样式 */
-        .photos {
-            display: none;
-        }
-        .photo-gallery {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        .photo-item {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        .photo-img-container {
-            position: relative;
-            width: 100%;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        .photo-img-container::before {
-            content: '';
-            display: block;
-            padding-top: 75%; /* 4:3 比例 (3/4 = 0.75) */
-        }
-        .photo-img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .photo-details {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-            text-align: center;
-        }
-        .photo-meta {
-            display: flex;
-            gap: 20px;
-            color: #666;
+            gap: 2rem;
+            flex-wrap: wrap;
             justify-content: center;
+            max-width: 1000px;
+            width: 100%;
         }
-
-        /* 页脚样式 */
+        .nav-card {
+            width: 280px;
+            height: 200px;
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #2d3748;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .nav-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+        .card-text {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
         .footer {
-            background-color: #f8f8f8;
-            padding: 16px 0;
+            margin-top: 4rem;
+            font-size: 0.9rem;
+            color: #718096;
             text-align: center;
-            margin-top: 40px;
         }
-		
-		/* GitHub logo */
-		.github-icon {
-		      color: #333; /* GitHub默认深色 */
-		      font-size: 36px; /* 图标大小 */
-		      transition: transform 0.3s ease;
-		    }
-		.github-icon:hover {
-		  transform: scale(1.1) rotate(10deg); /* 悬停效果 */
-		  color: #6e5494; /* hover时变色 */
-		}
-		
-		/* 首行缩进 */
-		.indent {
-			text-indent: 1em;
-		}
+        @media (max-width: 768px) {
+            .nav-card {
+                width: 100%;
+                max-width: 320px;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- 导航栏 -->
-    <div class="navbar">
-        <div class="nav-container">
-            <div class="logo">🍊橘猫橙妙妙屋🐈</div>
-            <div class="nav-links">
-		        <a href="index.html">首页</a>
-		        <a href="photo.html">年度照片</a>
-				<a href="music.html">音乐分享</a>
-            </div>
+    <h1 class="page-title">橘猫橙妙妙屋</h1>
+    <p class="page-subtitle">想看什么在下面自己点</p>
+	<div class="preview-section">全新首页风格！其余页面还在制作中……</div>
+    <div class="nav-container">
+        <div href="https://jaminchan1210.github.io/html5finalwork/"class="nav-card" id="homework-card">
+            <div class="card-icon">📚</div>
+            <div class="card-text">期末大作业展示</div>
+        </div>
+        <div href="#" class="nav-card" id="photo-card">
+            <div class="card-icon">📸</div>
+            <div class="card-text">年度照片</div>
+        </div>
+        <div href="#" class="nav-card" id="music-card">
+            <div class="card-icon">🎵</div>
+            <div class="card-text">年度音乐</div>
         </div>
     </div>
-
-    <!-- 内容容器 -->
-    <div class="container">
-        <!-- 首页内容 -->
-        <div id="home" class="home">
-            <!-- 个人介绍 -->
-            <div class="section">
-                <h2 style="font-weight: 500;">个人介绍</h2>
-                <div class="profile">
-                    <img src="img/pp.jpeg" alt="个人头像" class="profile-img">
-                    <div class="profile-text">
-                        <h3 style="font-size: 36px; font-family: 'MiSans-Demibold'; font-style: italic;">Andy Tao</h3>
-                        <p>可以叫我安迪，这是我的英文名。我出生于2006年，从小在深圳长大。现在正在学习计算机应用技术专业。</p>
-                        <p>INFP，爱好摄影，听歌和旅游。喜欢听周杰伦和陶喆的歌，喜欢的城市是香港和上海。</p>
-						<p style="font-size: 28px;">🇨🇳🚹🏫💻📷🎵✈️🎤🍲🍔🥤️</p>
-                    </div>
-                </div>
-            </div>
-			<!-- 头版部分 -->
-			<div class="section">
-				<p style="font-style: italic; text-align: center; font-size: 30px; text-decoration: underline;"><a href="photo.html">📷点击此处查看「2024年」年度照片📷</a></p>
-				<p style="text-align: center; font-size: 24px; ">「2025年」年度照片预计在2026年1月20日左右发布，敬请期待…</p>
-			</div>
-
-            <!-- 学习经历 -->
-            <div class="section">
-                <h2 style="font-weight: 500;">学习经历</h2>
-                <div class="indent">
-                    <h3 style="font-weight: 500;">广东新安职业技术学院信息工程学院-计算机应用技术专业</h3>
-						<p style="color: gray;">2025年9月 - 至今</p>
-                    <h3 style="font-weight: 500;">深圳外国语学校致远高中-高中阶段</h3>
-						<p style="color: gray;">2022年9月 - 2025年6月</p>
-					<h3 style="font-weight: 500;">深圳市光明区实验学校-初中阶段</h3>
-						<p style="color: gray;">2019年9月 - 2022年6月</p>
-                </div>
-            </div>
-			
-			<!-- 早期项目 -->
-			<div class="section">
-				<h2 style="font-weight: 500;">早期项目</h2>
-					<p class="indent">早期的我尝试过使用Google Sites和Hexo框架来建网站。</p>
-					<h3 style="text-align: center; font-style: italic; text-decoration: underline;"><a href="https://hexo.io/zh-cn/">点击此处了解Hexo框架</a></h3>
-					<p style="color: gray; font-weight: 300; font-size: 16px; text-align: center;">早期使用Hexo框架制作的网站源文件已丢失……</p>
-					<h3 style="text-align: center; font-style: italic; text-decoration: underline;"><a href="https://sites.google.com/view/jaminchan-en/main">点击此处前往我早期制作的Google Sites网站</a></h3>
-					<p style="color: gray; font-weight: 300; font-size: 16px; text-align: center;">要访问Google Sites，你需要使用VPN。使用时请遵守你所在地区的相关法律。</p>
-			</div>
-			
-			<!-- 关于 -->
-			<div class="section">
-				<h2 style="font-weight: 500;">Q&A</h2>
-				<div class="indent">
-					<h3>Q1: 为什么网名叫Jamin Chan?</h3>
-						<p>这个名字是好久以前头脑一热想出来的，一直沿用至今，并没有什么特殊意义。</p>
-					<h3>Q2: 为什么网名叫橘猫橙?</h3>
-						<p>橘猫橙这个名字就是最近想出来的，使用了Jamin Chan中的J, M, C三个作为首字母。</p>
-					<h3>Q3: 这个网站是怎么做的?</h3>
-						<p>首先用豆包生成了一个CSS样式，然后在此基础上，用HBuilderX进行编辑，编辑后上传GitHub。在下面你可以找到我的GitHub主页链接。</p>
-					<h3>Q4: Andy Tao也是网名吗?</h3>
-						<p>这个就不是网名了，是我从初中开始使用的英文名。Tao是我的姓，和David Tao，陶喆的陶一样。（难怪喜欢听陶喆的歌）</p>
-				</div>
-			</div>
-			
-			<!-- 联系我 -->
-            <div class="section">
-                <h2 style="font-weight: 500;">GitHub主页</h2>
-				<a href="https://github.com/jaminchan1210" target="_blank" class="fa-github">
-					<i class="fab fa-github github-icon"></i>
-				</a>
-            </div>
-			<div style="text-align: center;">
-			<a href="fonttest.html"><img src="img/640.webp" height="160" width="160" alt="高雅人士"></a>
-			</div>
-			<h3 style="text-align: center;">正在寻找创作灵感……</h3>
-        </div>
-    </div>
-
-    <!-- 页脚 -->
-    <div class="footer">
-        <p style="font-family: 'MiSans-Light';">&copy;2025 Jamin Chan｜保留一切权利</p>
-		<p style="font-family: 'MiSans-Light';">所有照片禁止用于商业用途！</p>
-		<p style="color: grey; font-size: 12px; font-style: italic;">本网站均使用了小米科技有限责任公司的"MiSans"字体</p>
-		<p style="color: grey; font-size: 12px; font-style: italic;">"Jamin Chan"和"橘猫橙"是作者在各社交平台的通用网名。为确保隐私安全，本网站没有任何作者的真实姓名。</p>
-    </div>
+    <div class="footer">&copy;2025 橘猫橙｜保留一切权利</div>
+    <script>
+        const homeworkCard = document.getElementById('homework-card');
+        homeworkCard.addEventListener('click', function() {
+            const isConfirm = confirm('该板块未适配移动端浏览器，建议使用电脑端浏览器查看，你要继续吗？');
+            if (isConfirm) {
+                window.location.href = 'homework.html';
+            }
+        });
+		const photoCard = document.getElementById('photo-card');
+		    photoCard.addEventListener('click', function() {
+		        alert('该板块尚在更新中，敬请期待！');
+		});
+		const musicCard = document.getElementById('music-card');
+		musicCard.addEventListener('click', function() {
+		    alert('该板块尚在更新中，敬请期待！');
+		});
+    </script>
 </body>
 </html>
