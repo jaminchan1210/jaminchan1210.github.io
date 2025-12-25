@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" sizes="24x24" href="img/logo.png">
+    <title>年度音乐分享 - 橘猫橙</title>
+    <style>
+		/* 初始化样式 */
+		@font-face {
+		    font-family: 'MiSans';
+		    src: url(fonts/MiSans-Regular.woff2) format('woff2');
+		    font-weight: 400;
+		    font-style: normal;
+		}
+		@font-face {
+			font-family: 'MiSans';
+			src: url(fonts/MiSans-Medium.woff2) format('woff2');
+			font-weight: 500;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'MiSans';
+			src: url(fonts/MiSans-Light.woff2) format('woff2');
+			font-weight: 200;
+			font-style: normal;
+		}
+		* {
+		    margin: 0;
+		    padding: 0;
+		    box-sizing: border-box;
+		    font-family: 'MiSans'
+		}
+		body {
+		    background: whitesmoke;
+		    color: #333;
+		    line-height: 1.6;
+		    padding: 2rem 0;
+		    min-height: 100vh;
+		    display: flex;
+		    flex-direction: column;
+		}
+		.container {
+		    max-width: 1000px;
+		    margin: 0 auto;
+		    padding: 0 2rem;
+		    flex-grow: 1;
+		}
+		.page-title {
+		    text-align: center;
+		    font-size: 2.5rem;
+		    font-weight: 700;
+		    margin-bottom: 3rem;
+		    color: #222;
+		    letter-spacing: 0.5px;
+		    background: linear-gradient(90deg, #2c5364, #203a43, #0f2027);
+		    -webkit-background-clip: text;
+		    background-clip: text;
+		    color: transparent;
+		}
+		.music-card {
+		    background: rgba(255, 255, 255, 0.95);
+		    border-radius: 12px;
+		    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+		    padding: 2.5rem;
+		    display: grid;
+		    grid-template-columns: 1fr 2fr;
+		    gap: 2rem;
+		    margin-bottom: 3rem;
+		    backdrop-filter: blur(5px);
+		    border: 1px solid rgba(255, 255, 255, 0.8);
+		}
+		.album-cover {
+		    width: 100%;
+		    aspect-ratio: 1/1;
+		    border-radius: 8px;
+		    object-fit: cover;
+		    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+		}
+		.music-info {
+		    display: flex;
+		    flex-direction: column;
+		    gap: 1.5rem;
+		}
+		
+		.music-header h2 {
+		    font-size: 1.8rem;
+		    color: #007acc;
+		    background-clip: text;
+		    margin-bottom: 0.5rem;
+			font-style: italic;
+		}
+		.music-meta {
+		    display: flex;
+		    gap: 1.5rem;
+		    color: #666;
+		    font-size: 1rem;
+		}
+		.meta-item {
+		    display: flex;
+		    align-items: center;
+		    gap: 0.5rem;
+		}
+		.lyrics-section h3, 
+		.review-section h3 {
+		    font-size: 1.3rem;
+		    color: #333;
+		    margin-bottom: 1rem;
+		    padding-bottom: 0.5rem;
+		    border-bottom: 2px solid #eee;
+			font-weight: 500;
+		}
+		.review-section p {
+			font-weight: 200;
+		    text-indent: 2em;
+		    font-size: 1.05rem;
+		    color: #555;
+		    line-height: 1.8;
+		    text-align: justify;
+		}
+		.copyright {
+			font-weight: 200;
+		    height: 60px;
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		    margin-top: 2rem;
+		}
+		.copyright-content {
+		    text-align: center;
+		    color: #666;
+		    font-size: 0.95rem;
+		}
+		.copyright-content p {
+		    margin: 0;
+		    line-height: 1.4;
+		}
+		.audio-player {
+		    width: 100%;
+		    margin: 1.5rem 0;
+		    outline: none;
+		    border-radius: 4px;
+		}
+		.lyrics-container {
+		    max-height: 400px;
+		    overflow-y: auto;
+		    scroll-behavior: smooth;
+		    padding-right: 0.5rem;
+		    margin-top: 1rem;
+		}
+		.lyrics-line {
+		    font-size: 1.1rem;
+		    line-height: 2.2;
+		    padding: 0.3rem 0.6rem;
+		    margin: 0.2rem 0;
+		    border-radius: 4px;
+		    color: #444;
+		    opacity: 0.7;
+		    transition: all 0.2s ease;
+			font-weight: 200;
+		}
+		.lyrics-line:hover {
+		    background: #e8f4fd;
+		    color: #007acc;
+		    transform: translateX(4px);
+		    opacity: 1;
+			font-weight: 500;
+		}
+		.lyrics-line.active {
+		    background: linear-gradient(90deg, #007acc, #0099cc);
+		    color: white;
+		    opacity: 1;
+		    transform: translateX(2px);
+		    font-weight: 500;
+		}
+		.time-tag {
+		    font-size: 0.7rem;
+		    color: #999;
+		    margin-right: 0.8rem;
+		    opacity: 0.8;
+		}
+		.player-section {
+		    margin: 1rem 0;
+		    padding: 1rem;
+		    background: #f8f9fa;
+		    border-radius: 8px;
+		}
+		@media (max-width: 768px) {
+		    .music-card {
+		        grid-template-columns: 1fr;
+		    }
+		
+		    .page-title {
+		        font-size: 2rem;
+		    }
+		
+		    .music-header h2 {
+		        font-size: 1.5rem;
+		    }
+		
+		    .container {
+		        padding: 0 1rem;
+		    }
+		
+		    .music-card {
+		        padding: 1.5rem;
+		    }
+		    .copyright-content {
+		        font-size: 0.85rem;
+		        padding: 0 1rem;
+		    }
+		}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 页面标题 -->
+        <h1 class="page-title">2025年度歌曲</h1>
+        <!-- 音乐卡片 -->
+        <div class="music-card">
+            <!-- 专辑封面 -->
+            <div class="cover-container">
+                <img src="img/lastfireworksofthesummernight.JPG" alt="专辑封面" class="album-cover">
+            </div>
+            <!-- 音乐信息主体 -->
+            <div class="music-info">
+                <!-- 音乐基本信息 -->
+                <div class="music-header">
+                    <h2>夏夜最后的烟火</h2>
+                    <div class="music-meta">
+                        <div class="meta-item">
+                            <span>歌手：颜人中</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>专辑：夏夜最后的烟火 - Single</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 音频播放区 -->
+                <div class="player-section">
+                    <h3>音乐播放</h3>
+                    <audio id="music-player" class="audio-player" controls>
+                        <source src="audio/夏夜最后的烟火.MP3" type="audio/mpeg">
+                        浏览器不支持音频播放
+                    </audio>
+                </div>
+
+                <!-- 歌词区域 -->
+                <div class="lyrics-section">
+                    <h3>歌词（播放音乐后会自动滚动）</h3>
+                    <div class="lyrics-container" id="lyrics-container">
+                        <div class="lyrics-line" data-time="22">
+                            <span class="time-tag">00:22</span>你的眼睛 比海辽阔
+                        </div>
+                        <div class="lyrics-line" data-time="27">
+                            <span class="time-tag">00:27</span>夕阳下黄昏亲吻泡沫
+                        </div>
+                        <div class="lyrics-line" data-time="32">
+                            <span class="time-tag">00:32</span>在你身边 是最安心的时刻
+                        </div>
+                        <div class="lyrics-line" data-time="42">
+                            <span class="time-tag">00:42</span>你的背影 陪我沉默
+                        </div>
+                        <div class="lyrics-line" data-time="47">
+                            <span class="time-tag">00:47</span>有一种默契不问也懂
+                        </div>
+                        <div class="lyrics-line" data-time="52">
+                            <span class="time-tag">00:52</span>冰的啤酒 代替不说的失落
+                        </div>
+                        <div class="lyrics-line" data-time="61">
+                            <span class="time-tag">01:01</span>当我抬起头 你正看向我
+                        </div>
+                        <div class="lyrics-line" data-time="66">
+                            <span class="time-tag">01:06</span>眼中倒映着夏夜绚烂的烟火
+                        </div>
+                        <div class="lyrics-line" data-time="71">
+                            <span class="time-tag">01:11</span>灰暗的心 竟然开始变鲜活
+                        </div>
+                        <div class="lyrics-line" data-time="77">
+                            <span class="time-tag">01:17</span>你的存在 治愈我
+                        </div>
+                        <div class="lyrics-line" data-time="81">
+                            <span class="time-tag">01:21</span>月慢慢沉了 海风还吹着
+                        </div>
+                        <div class="lyrics-line" data-time="85">
+                            <span class="time-tag">01:25</span>我也愿意做你的头号支持者
+                        </div>
+                        <div class="lyrics-line" data-time="90">
+                            <span class="time-tag">01:30</span>感谢是你 从来坚定又温和
+                        </div>
+                        <div class="lyrics-line" data-time="96">
+                            <span class="time-tag">01:36</span>并肩走着 我就永远不会跌落
+                        </div>
+                        <div class="lyrics-line" data-time="106">
+                            <span class="time-tag">01:46</span>望着夜空 繁星闪烁
+                        </div>
+                        <div class="lyrics-line" data-time="111">
+                            <span class="time-tag">01:51</span>跟你聊梦想剩下什么
+                        </div>
+                        <div class="lyrics-line" data-time="116">
+                            <span class="time-tag">01:56</span>你却笑了 说只想我能快乐
+                        </div>
+                        <div class="lyrics-line" data-time="126">
+                            <span class="time-tag">02:06</span>在那一刻 突然静默
+                        </div>
+                        <div class="lyrics-line" data-time="131">
+                            <span class="time-tag">02:11</span>原来不管世界多严苛
+                        </div>
+                        <div class="lyrics-line" data-time="136">
+                            <span class="time-tag">02:16</span>可以脆弱 可以是不完美的
+                        </div>
+                        <div class="lyrics-line" data-time="145">
+                            <span class="time-tag">02:25</span>当我抬起头 你正看向我
+                        </div>
+                        <div class="lyrics-line" data-time="150">
+                            <span class="time-tag">02:30</span>眼中倒映着夏夜绚烂的烟火
+                        </div>
+                        <div class="lyrics-line" data-time="155">
+                            <span class="time-tag">02:35</span>灰暗的心 竟然开始变鲜活
+                        </div>
+                        <div class="lyrics-line" data-time="161">
+                            <span class="time-tag">02:41</span>你的存在 治愈我
+                        </div>
+                        <div class="lyrics-line" data-time="165">
+                            <span class="time-tag">02:45</span>月慢慢沉了 海风还吹着
+                        </div>
+                        <div class="lyrics-line" data-time="170">
+                            <span class="time-tag">02:50</span>我也愿意做你的头号支持者
+                        </div>
+                        <div class="lyrics-line" data-time="175">
+                            <span class="time-tag">02:55</span>感谢是你 从来坚定又温和
+                        </div>
+                        <div class="lyrics-line" data-time="181">
+                            <span class="time-tag">03:01</span>并肩走着 我就永远不会跌落
+                        </div>
+                        <div class="lyrics-line" data-time="191">
+                            <span class="time-tag">03:11</span>(Bridge)
+                        </div>
+                        <div class="lyrics-line" data-time="209">
+                            <span class="time-tag">03:29</span>一起等日出 一起数星河
+                        </div>
+                        <div class="lyrics-line" data-time="214">
+                            <span class="time-tag">03:34</span>一起看完了 夏夜最后的烟火
+                        </div>
+                        <div class="lyrics-line" data-time="219">
+                            <span class="time-tag">03:39</span>灰暗的心 竟然开始变鲜活
+                        </div>
+                        <div class="lyrics-line" data-time="225">
+                            <span class="time-tag">03:45</span>你的存在 治愈我
+                        </div>
+                        <div class="lyrics-line" data-time="229">
+                            <span class="time-tag">03:49</span>月慢慢沉了 海风还吹着
+                        </div>
+                        <div class="lyrics-line" data-time="234">
+                            <span class="time-tag">03:54</span>我也愿意做你的头号支持者
+                        </div>
+                        <div class="lyrics-line" data-time="239">
+                            <span class="time-tag">03:59</span>感谢是你 从来坚定又温和
+                        </div>
+                        <div class="lyrics-line" data-time="245">
+                            <span class="time-tag">04:05</span>并肩走着 我就永远不会跌落
+                        </div>
+                        <div class="lyrics-line" data-time="254">
+                            <span class="time-tag">04:14</span>(Outro)
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 歌曲简评 -->
+                <div class="review-section">
+                    <h3>歌曲简评</h3>
+                    <p>
+                        《夏夜最后的烟火》是把平凡亲密揉进夏夜每一缕风里的温柔叙事 —— 它以海、黄昏、大海、冰啤酒作具象的情绪容器，让 “安心” 落进沉默的背影与不问也懂的默契里，而 “当我抬起头，你正看向我” 的瞬间，是整首歌最亮的烟火：对方眼里的绚烂映亮灰暗的心，把 “被看见” 酿成治愈的解药，聊梦想时那句 “只想我能快乐”，更戳破世界的严苛，给了脆弱与不完美被接住的底气；段落的循环像夏夜余温反复轻裹心脏，哪怕最后的烟火落幕，“一起等日出、数星河” 的细碎陪伴，也早成了比烟火更持久的温柔 —— 它写的从不是烟火的熄灭，是那些平凡瞬间攒起的、能暖透一生的鲜活……
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="copyright">
+        <div class="copyright-content">
+            <p>&copy;2025 橘猫橙｜本网站仅供分享，其歌曲的版权归其所有者所有。</p>
+        </div>
+    </footer>
+
+    <script>
+        // 歌词同步高亮功能
+        (function() {
+            const audio = document.getElementById('music-player');
+            const lyricsLines = document.querySelectorAll('.lyrics-line');
+            const lyricsContainer = document.getElementById('lyrics-container');
+            const lyricsArray = Array.from(lyricsLines);
+        
+            // 监听音频播放时间更新
+            audio.addEventListener('timeupdate', function() {
+                const currentTime = Math.floor(audio.currentTime);
+        
+                lyricsArray.forEach((line, index) => {
+                    const lineTime = parseInt(line.dataset.time);
+                    const nextLineTime = lyricsArray[index + 1] 
+                        ? parseInt(lyricsArray[index + 1].dataset.time) 
+                        : 9999;
+        
+                    // 高亮当前播放歌词
+                    if (currentTime >= lineTime && currentTime < nextLineTime) {
+                        line.classList.add('active');
+                        
+                        // 歌词滚动定位
+                        const lineRect = line.getBoundingClientRect();
+                        const containerRect = lyricsContainer.getBoundingClientRect();
+                        const isLineOut = lineRect.top < containerRect.top || lineRect.bottom > containerRect.bottom;
+                        if (isLineOut) {
+                            line.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    } else {
+                        line.classList.remove('active');
+                    }
+                });
+            });
+        
+            // 点击歌词跳转播放
+            lyricsLines.forEach(line => {
+                line.addEventListener('click', function() {
+                    const jumpTime = parseInt(this.dataset.time);
+                    audio.currentTime = jumpTime;
+                    console.log('跳转至：', jumpTime, '秒');
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
