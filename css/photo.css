@@ -1,0 +1,140 @@
+@charset "utf-8";
+	@font-face {
+		font-family: 'MiSans';
+		src: url(fonts/MiSans-Regular.woff2) format('woff2');
+		font-weight: 400;
+		font-style: normal;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-family: "MiSans";
+	}
+	body {
+	    min-height: 100vh;
+	    background: linear-gradient(135deg, #e0f7fa 0%, #f3e5f5 100%);
+	    padding: 2rem 1rem;
+	    display: flex;
+	    flex-direction: column;
+	    align-items: center;
+	}
+	
+	/* 页面标题样式，和首页保持视觉统一 */
+	.page-title {
+	    font-size: 2.5rem;
+	    color: #2d3748;
+	    margin-bottom: 0.8rem;
+	    text-align: center;
+	}
+	
+	/* 页面标语样式 */
+	.page-subtitle {
+	    font-size: 1rem;
+	    color: #718096;
+	    margin-bottom: 2rem;
+	    text-align: center;
+	}
+	
+	/* 照片列表容器，限制最大宽度，实现单列布局 */
+	.photo-list {
+	    width: 100%;
+	    max-width: 600px; /* 单列的最大宽度，保证照片不会过宽 */
+	    display: flex;
+	    flex-direction: column;
+	    gap: 2rem; /* 照片卡片之间的间距 */
+	}
+	
+	/* 照片卡片样式，卡片式设计增强层次感 */
+	.photo-card {
+	    background-color: white;
+	    border-radius: 16px;
+	    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+	    overflow: hidden; /* 让图片圆角和卡片一致 */
+	    transition: all 0.3s ease; /* 过渡动画，让hover效果更流畅 */
+	}
+	
+	/* 照片卡片hover效果：缩放+阴影加深 */
+	.photo-card:hover {
+	    transform: translateY(-8px) scale(1.01);
+	    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+	}
+	
+	/* 新增：照片比例容器，实现4:3的固定比例 */
+	.photo-container {
+	    position: relative; /* 作为照片绝对定位的父容器 */
+	    width: 100%;
+	    padding-top: 75%; /* 4:3比例的核心：3/4=75% */
+	}
+	
+	/* 照片展示区，现在填充整个比例容器，不再用固定高度 */
+	.photo-img {
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%; /* 填充父容器的高度 */
+	    object-fit: cover; /* 图片裁剪，保持比例 */
+	    transition: transform 0.3s ease; /* 图片单独的hover动画 */
+	}
+	
+	/* 鼠标悬浮时，照片轻微放大，增加动感 */
+	.photo-card:hover .photo-img {
+	    transform: scale(1.03);
+	}
+	
+	/* 照片信息区域，内边距保证文字和边框的距离 */
+	.photo-info {
+	    padding: 1.5rem;
+	}
+	
+	/* 照片主题样式 */
+	.photo-title {
+	    font-size: 1.3rem;
+	    color: #2d3748;
+	    margin-bottom: 0.8rem;
+	    font-weight: 500;
+	}
+	
+	/* 照片详情（日期、地点）样式，使用flex布局排列 */
+	.photo-details {
+	    display: flex;
+	    gap: 1.5rem; /* 日期和地点之间的间距 */
+	    color: #718096;
+	    font-size: 0.95rem;
+	}
+	
+	/* 详情项样式，用图标前缀增强视觉效果 */
+	.detail-item {
+	    display: flex;
+	    align-items: center;
+	    gap: 0.5rem;
+	}
+	
+	/* 页脚样式 */
+	.footer {
+	    margin-top: 4rem;
+	    font-size: 0.9rem;
+	    color: #718096;
+	    text-align: center;
+	    width: 100%;
+	}
+	
+	/* 响应式调整：小屏幕时调整标题字体和卡片内边距 */
+	@media (max-width: 768px) {
+	    .page-title {
+	        font-size: 2rem;
+	    }
+	
+	    .photo-info {
+	        padding: 1.2rem;
+	    }
+	}
+	
+	/* 更小屏幕（手机）的调整 */
+	@media (max-width: 480px) {
+	    .photo-details {
+	        flex-direction: column; /* 日期和地点垂直排列 */
+	        gap: 0.8rem;
+	    }
+	}
