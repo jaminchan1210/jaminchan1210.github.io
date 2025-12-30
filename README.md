@@ -16,4 +16,4 @@
 <h3 style="text-align:center">寻找创作灵感中</h3>
 
 #### Jamin Chan和橘猫橙都可代表作者。
-&copy;2025 Jamin Chan. All Right Reserved.
+&copy;2026 Jamin Chan. All Right Reserved.
