@@ -11,7 +11,6 @@
 ### 2026年全新风格已发布！
 ### 年度照片分享已发布！
 ### 年度音乐分享已发布！
-### （北京时间2025年12月30日20:33）
 
 <img src="https://jaminchan1210.github.io/html5finalwork/img/640.webp" height="160" width="160" alt="高雅人士">
 <h3 style="text-align:center">寻找创作灵感中</h3>
